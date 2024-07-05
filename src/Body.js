@@ -22,16 +22,13 @@ const [search,setSearch] = useState("");
 
 // setInfo(json);
 
-// console.log(json)
+// // console.log(json)
 
 // console.clear()
 
 // }
 //    }
-//    useEffect(()=>{
-//     getData();
-// },[search])
-
+//  useEffect(()=>{ getData()},[search])
 
     async function handleClick(){
     
@@ -74,15 +71,13 @@ return (isOnline)? (
 
 <div className="weathercard">
 
-
-{(info.cod === 'city not found' ) ? <h3 className="NoData">No data found</h3>:
-
-<>
-
+<div></div>
+{(info.message === 'city not found' ) ?<h3 className="NoData">No Location Found</h3>:
+<div>
 <div className="city-temp">
   <div>  
  <div class="city-country">   
-{info?.name} {(info?.sys?.country)} 
+  {(info?.name&&info?.sys?.country ) ? <div class="city-country">   {info?.name} {(info?.sys?.country)}</div> :<h2> Loading </h2>}
 </div>
 <div class="temp">
 {info?.main?.temp}℃
@@ -132,7 +127,7 @@ return (isOnline)? (
 
 </div>
 
-</>
+</div>
 
 }
 
