@@ -12,6 +12,7 @@ const [city] = useState("Delhi")
 
 const [search,setSearch] = useState("");
 
+
 //    async function getData (){
 
 //     if(search||city){
