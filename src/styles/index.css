@@ -14,11 +14,12 @@
 
 
 .description>div{
-  padding-top: 40px;
-  padding-right: 40px;
+  /* padding-top: 140px;
+  padding-right: 40px; */
 
-  transform: rotate(-90deg);
+  /* transform: rotate(-90deg); */
   font-size: larger;
+  margin-right:20px
 }
 
 .temp{
