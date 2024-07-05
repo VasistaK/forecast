@@ -12,25 +12,6 @@ const [city] = useState("Delhi")
 
 const [search,setSearch] = useState("");
 
-//    async function getData (){
-
-//     if(search||city){
-
-// const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search||city}&units=metric&appid=19e679057b9bcb475f2b0fdccb53c134`)
-
-// const json  = await data.json();
-
-// setInfo(json);
-
-// console.log(json)
-
-// console.clear()
-
-// }
-//    }
-//    useEffect(()=>{
-//     getData();
-// },[search])
 
 
     async function handleClick(){
