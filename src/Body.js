@@ -12,28 +12,9 @@ const [city] = useState("Delhi")
 
 const [search,setSearch] = useState("");
 
-
-//    async function getData (){
-
-//     if(search||city){
-
-// const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search||city}&units=metric&appid=19e679057b9bcb475f2b0fdccb53c134`)
-
-// const json  = await data.json();
-
-// setInfo(json);
-
-// // console.log(json)
-
-// console.clear()
-
-// }
-//    }
-//  useEffect(()=>{ getData()},[search])
-
     async function handleClick(){
     
-    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=19e679057b9bcb475f2b0fdccb53c134`)
+    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=19e679057b9bcb475f2b0fdccb53c134`)
     
     const json  = await data.json();
     
@@ -46,7 +27,7 @@ const [search,setSearch] = useState("");
     }
        
         useEffect(()=>async function Data (){
-            const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${"Delhi"}&units=metric&appid=19e679057b9bcb475f2b0fdccb53c134`)
+            const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${"Delhi"}&appid=19e679057b9bcb475f2b0fdccb53c134`)
             
             const json  = await data.json();
             
@@ -64,10 +45,11 @@ return (isOnline)? (
 <div className="AppPage">
 
 <div className="search-box">
-    <input type="search"  value={search} placeholder="Search" onChange={(e)=>{setSearch(e.target.value)}}/>
+    <input type="search" value={search} placeholder="Search" onChange={(e)=>{setSearch(e.target.value)}}/>
     <button class="search-btn"  onClick={handleClick}>
         <img src="https://cdn1.iconfinder.com/data/icons/jumpicon-basic-ui-glyph-1/32/-_Magnifier-Search-Zoom--64.png"/>
     </button>
+    
 </div>
 
 <div className="weathercard">
@@ -78,10 +60,10 @@ return (isOnline)? (
 <div className="city-temp">
   <div>  
  <div class="city-country">   
-  {(info?.name&&info?.sys?.country ) ? <div class="city-country">   {info?.name} {(info?.sys?.country)}</div> :<h2> Loading </h2>}
+   {info?.name} {(info?.sys?.country)}
 </div>
 <div class="temp">
-{info?.main?.temp}℃
+{info?.main?.temp}℉
 </div>
 </div>
 
@@ -102,12 +84,12 @@ return (isOnline)? (
 </div>
 
 <div className="min-temp">
-    {info?.main?.temp_min}℃
+    {info?.main?.temp_min}℉
      <p>Min_Temp</p>
 </div> 
 
 <div className="max-temp">
-        {info?.main?.temp_max}℃
+        {info?.main?.temp_max}℉
          <p>Max_Temp</p>
 </div>
 
@@ -122,7 +104,7 @@ return (isOnline)? (
 </div>
 
 <div className="feels-like">
-        {info?.main?.feels_like}℃
+        {info?.main?.feels_like}℉
         <p>feels_like</p>
 </div>
 
