@@ -1,0 +1,13 @@
+*{
+    margin:0px;
+    padding: 0px;
+  }
+  
+  body{
+    background-image: url("https://cdn.pixabay.com/photo/2018/11/22/18/06/desert-3832488_960_720.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(255,255,255);
+    font-size: large;
+    font-family: Arial;
+  }

@@ -1,0 +1,33 @@
+input{
+    text-transform: capitalize;
+    height:49px;
+    min-width: 300px;
+    padding-left:20px;
+    font-size: 20px;
+    border:1px solid rgb(241, 239, 239)
+    }
+    
+    
+    
+    input::placeholder{
+      font-family: Arial;
+      font-size: 20px;
+    }
+     
+    .search-box{
+    padding-left:10px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    }
+    
+    .search-btn{
+    height:51px ;
+    }
+    
+    .search-btn>img{
+      height:100%;
+      width: 100%;
+    }
+    

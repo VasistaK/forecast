@@ -1,0 +1,39 @@
+
+.city-temp{
+  height:70vh;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.city-country{
+  padding-left: 30px;
+  font-size: x-large;
+}
+
+
+
+.description>div{
+  transform: rotate(-90deg);
+  font-size: larger;
+}
+
+.temp{
+  margin:20px 20px;
+  font-size: 80px;
+  /* position: relative; */
+}
+
+.climate-info{
+  display: flex;
+  justify-content:space-between;
+  width:40vw;
+  opacity:1;
+  align-items: center;
+  text-align: center;
+  border: 1px solid white;
+  padding:30px 10px 30px 10px;
+  background-color:rgba(241, 239, 239,0.5);
+  margin-left: 30px;
+}
+
