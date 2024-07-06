@@ -1,43 +1,144 @@
 
-.city-temp{
-  height:70vh;
+@media screen and (min-width:425px){
+  
+.search-container{
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
-  display: flex;
+} 
+
+input{
+ text-transform: capitalize;
+ padding:10px;
+ font-size: 20px;
+ border-style:solid;
+ border: none;
+
+}
+
+button{
+  height: 47px;
+  vertical-align: top;
+  width:80px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.city-temperature-container{
+  margin-top: 20px;
+  margin-left:10px;
+  display:flex;
   justify-content: space-between;
-}
-
-.city-country{
-  padding-left: 30px;
-  font-size: x-large;
-}
-
-
-
-.description>div{
-  /* padding-top: 140px;
-  padding-right: 40px; */
-
-  /* transform: rotate(-90deg); */
-  font-size: larger;
-  margin-right:20px
-}
-
-.temp{
-  margin:20px 20px;
-  font-size: 80px;
-  /* position: relative; */
-}
-
-.climate-info{
-  display: flex;
-  justify-content:space-between;
-  width:40vw;
-  opacity:1;
   align-items: center;
-  text-align: center;
-  border: 1px solid white;
-  padding:30px 10px 30px 10px;
-  background-color:rgba(241, 239, 239,0.1);
-  margin-left: 30px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif ;
 }
+
+p{
+  margin-top: 10px;
+}
+
+.weather-description{
+  margin-right:20px;
+}
+
+.weather-now{
+  display: flex;
+  justify-content:center ;
+
+}
+
+.weather-now{
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  text-align: center;
+  border:1px solid white;
+  align-items: center;
+  row-gap: 20px;
+  column-gap: 30px;
+  color:whitesmoke;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgba(0,0,0,0.4);
+  margin:150px 10px 0px 10px
+}
+
+.Title{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+}  
+
+@media screen and (min-width:768px) {
+
+
+.search-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+} 
+
+input{
+  height: 28px;
+  margin-right:-1px;
+  font-size: 20px;
+}
+
+button{
+  height: 49px;
+  vertical-align: top;
+  width:80px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.city-temperature-container{
+  margin-top: 20px;
+  margin-left:30px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26px;
+  font-family: Arial, Helvetica, sans-serif ;
+  color:whitesmoke;
+}
+
+img{
+  margin-left: 120px;
+}
+
+p{
+  margin-top: 10px;
+}
+
+.weather-description{
+  margin-right:20px;
+}
+
+.weather-now{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  border:1px solid white;
+  padding-top:15px;
+  color:whitesmoke;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgba(0,0,0,0.4);
+  margin:250px 10px 0px 10px;
+}
+
+.Title{
+  display: flex;
+  justify-content:center; 
+  align-items: center;
+  margin-top: 90px;
+  font-size: 30px;
+  color:whitesmoke;
+
+}
+
+}
+
 

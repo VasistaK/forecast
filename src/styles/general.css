@@ -1,13 +1,8 @@
-*{
-    margin:0px;
-    padding: 0px;
-  }
-  
-  body{
-    background-image: url("https://cdn.pixabay.com/photo/2018/11/22/18/06/desert-3832488_960_720.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: rgb(255,255,255);
-    font-size: large;
-    font-family: Arial;
-  }
+body{
+  background-image: url("https://img.freepik.com/free-photo/beautiful-view-tranquil-desert-clear-sky-captured-morocco_181624-8496.jpg?w=996&t=st=1720282402~exp=1720283002~hmac=6c38a0e40ae409b45765d19619410bcf6523dee010d688482d3a5003ab6eabab");
+  background-size: cover;
+}
+
+h3{
+  color: whitesmoke;
+}
