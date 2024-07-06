@@ -79,7 +79,7 @@ return (isOnline)? (
      <>
 <div className="city-temperature-container">
 <div>
-<p>{info?.name}<img src={weather} alt="icon"/></p>
+<p>{info?.name} <img src={weather} alt="icon"/></p>
 <p>{info?.main?.temp}℉</p>
 
 </div>

@@ -12,6 +12,7 @@
     height: 29px;
     margin-right:-1px;
     font-size: 12px;
+    text-transform: capitalize;
   }
   
   button{
@@ -34,6 +35,9 @@
   
   img{
     margin-left: 40px;
+    position: absolute;
+    z-index: 1;
+    top:60px
 
   }
   
