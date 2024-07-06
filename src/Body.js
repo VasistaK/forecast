@@ -84,7 +84,7 @@ return (isOnline)? (
 
 </div>
 <div className="weather-description">
-  {info?.weather?.map(x=>x.description)}
+  {info?.weather?.map(x=>x.main)}
 </div>
 </div>
 
