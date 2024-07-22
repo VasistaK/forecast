@@ -77,7 +77,7 @@ return (isOnline)? (
 <div>{info?.wind?.speed}MPH<p>Wind_Speed</p></div>
 </div>
 </div>
-<div className="font-extrabold text-2xl fixed left-[50%] bottom-[5%] max-sm:fixed max-sm:bottom-[50px] max-sm:left-[200px]">OverDrop</div>
+<div className="font-extrabold text-2xl fixed left-[50%] bottom-[5%] max-sm:fixed max-sm:bottom-[10%] max-sm:left-[40%]">OverDrop</div>
 </>
 }
 </div>
