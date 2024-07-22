@@ -52,7 +52,7 @@ return (isOnline)? (
     <input onKeyDown={(e)=>{if(e.key === "Enter"){
      return handleClick()
     }}} placeholder="EnterLocation" className=" bg-transparent h-12 w-72 px-2  border-2 border-gray-300" onChange={(e)=>{setSearch(e.target.value)}}/>
-     <button className="border-x-2 border-gray-300 ml-[-85px] p-2" onClick={handleClick}>
+     <button className="border-l-2 border-gray-300 ml-[-85px] p-2" onClick={handleClick}>
         Search
      </button>
      </div>
@@ -77,7 +77,7 @@ return (isOnline)? (
 <div>{info?.wind?.speed}MPH<p>Wind_Speed</p></div>
 </div>
 </div>
-<div className="font-extrabold text-2xl fixed left-[50%] bottom-[5%] max-sm:fixed max-sm:bottom-[10%] max-sm:left-[40%]">OverDrop</div>
+<div className="font-extrabold flex justify-center text-3xl mt-9">OverDrop</div>
 </>
 }
 </div>
