@@ -27,8 +27,6 @@ const Input = ({info,setInfo}) => {
     }
      }
 
-
-
   return (
     <div className="flex justify-center text-white m-0 max-sm:flex-wrap">
     <input 
