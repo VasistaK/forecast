@@ -81,8 +81,9 @@ const temparray = ftoc.call(objtemp);
 return (isOnline)? (
   <>
 <div  className=" h-[100vh] bg-cover text-white font-mono font-bold text-xl max-sm:bg-cover bg-[url('https://t4.ftcdn.net/jpg/02/78/52/07/360_F_278520748_G9sRQdSValj67Hihmt4r3ji6SLRT3ViA.jpg')]">
-<div  className="flex justify-center pt-4">
-    <div className="flex justify-between"><input onKeyDown={(e)=>{if(e.key === "Enter"){
+<div  className="flex justify-center pt-4 max-sm:flex-wrap">
+    <div className="flex justify-between">
+  <input onKeyDown={(e)=>{if(e.key === "Enter"){
      return handleClick()
     }}} placeholder="EnterLocation" className="relative bg-transparent h-12  px-2  border-2 border-gray-300" onChange={(e)=>{setSearch(e.target.value)}}/>
       
@@ -90,17 +91,19 @@ return (isOnline)? (
      <button onClick={handleClick} className="items-center border-l-2 absolute border-gray-300 top-4 ml-40 pl-3  h-12 " >
         Search
      </button>
-
+    
      </div>
 
 
                      {/* togglebtn */}
-     <div className="border-2  border-white flex- ml-3 relative flex justify-between items-center"><span className=" pl-3 p-[8px] w-full h-full duration-200 ease-in-out" onClick={toggle}>℃</span>
+     
+          <div className=" max-sm:mt-2  border-2  border-white flex- ml-3 relative flex justify-between items-center"><span className=" pl-3 p-[8px] w-full h-full duration-200 ease-in-out" onClick={toggle}>℃</span>
      {(value)? 
      <button className=" absolute bg-white h-full w-[50%] text-black ml-[50%] ease-linear duration-200" >{variable}</button> :
       <button className="bg-white h-full w-[50%] mr-[50%] text-black duration-200 ease-linear absolute" >{variable}</button>
        } <span className="h-full w-[full] pr-2 p-[8px] mr-2 " onClick={toggle}>℉</span> </div>
      </div>
+
      {(info.message === 'city not found')?<h3>No Data Found</h3>:
      <>
      <div className="">
