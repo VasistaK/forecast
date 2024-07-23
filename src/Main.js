@@ -4,7 +4,7 @@ import React from 'react'
 const Main = ({info,value,variable,temparray}) => {
   return (
 <div className="flex justify-around mt-4">
-<div className=" h-4 p-10"> 
+<div className=" h-8 "> 
 <p> {info?.name} </p>
 <p>{(value) ? info?.main?.temp: Math.round(temparray[0])}{variable}</p>
 </div>
