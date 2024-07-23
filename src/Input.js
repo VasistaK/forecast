@@ -40,7 +40,7 @@ const Input = ({info,setInfo}) => {
         
     <button 
     onClick={handleClick} 
-    className="align-middle ml-[-88px] border-l-2 h-[38px] px-2 mt-[9px] " 
+    className="align-middle ml-[-88px] border-l-2 h-[38px] pl-1 pr-1 mt-[9px] " 
     >
     Search
     </button>

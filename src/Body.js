@@ -49,7 +49,7 @@ setVariable(value?"℃":"℉");
  }
 
 function ftoc(){
-return[(this.temp-32)*5/9,(this.feelslike-32)*5/9,(this.maxtemp-32)*5/9,(this.maxtemp-32)*5/9]
+return[(this.temp-32)*5/9,(this.feelslike-32)*5/9,(this.mintemp-32)*5/9,(this.maxtemp-32)*5/9]
 }
 
 const objtemp = {
