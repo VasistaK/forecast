@@ -20,11 +20,10 @@ const Input = ({info,setInfo}) => {
      
         }
      }
-          
 
      function inputHandler(e){
         if(e.key === "Enter"){
-        return handleClick()
+        return handleClick();
     }
      }
 
