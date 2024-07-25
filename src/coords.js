@@ -8,7 +8,6 @@ const Coords = () => {
         navigator.geolocation.getCurrentPosition((position)=>{
            setLat(position.coords.latitude);
            setLon(position.coords.longitude);
-           console.log(position.coords.latitude);
         })
       }
 

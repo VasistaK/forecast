@@ -13,6 +13,10 @@ import WeatherNow from "./WeatherNow";
 
 import Toggle from "./toggle";
 
+
+
+
+
 export const Body = ()=>{
 
   const [lat,lon] = coords();
@@ -33,7 +37,6 @@ async function Data (){
     
     setInfo(json);
 
-    console.log(json);
   
 } 
 
@@ -64,19 +67,15 @@ maxtemp:info?.main?.temp_max,
 const temparray = ftoc.call(objtemp);
 
 
-// console.log(temparray[0]);
-
-
-
 return (isOnline)? (
   <>
-<div  className=" h-[100vh] bg-cover text-white font-mono font-bold text-xl max-sm:bg-cover bg-[url('https://t4.ftcdn.net/jpg/02/78/52/07/360_F_278520748_G9sRQdSValj67Hihmt4r3ji6SLRT3ViA.jpg')]">
+<div className=" h-[100vh] bg-cover text-white font-mono font-bold text-xl max-sm:bg-cover bg-[url('https://t4.ftcdn.net/jpg/02/78/52/07/360_F_278520748_G9sRQdSValj67Hihmt4r3ji6SLRT3ViA.jpg')]">
 
 <div  className="">
      
      <Input setInfo={setInfo}/>
                   
-     <Toggle value = {value} variable={variable} toggle={toggle}/>
+     < Toggle value = {value} variable={variable} toggle={toggle}/>
 
      {(info.message === 'city not found')?<h3>No Data Found</h3>:
      
