@@ -12,7 +12,7 @@ const Input = ({info,setInfo}) => {
    
     const [search,setSearch] = useState("");
 
-    const suggestionurl  = 'http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
+    const suggestionurl  = 'https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
 
     const getSuggestions = async ()=>{
 
@@ -40,7 +40,7 @@ const Input = ({info,setInfo}) => {
 
          if(search !== ""){
    
-       const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=Imperial&appid=19e679057b9bcb475f2b0fdccb53c134`)
+       const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${search}&units=Imperial&appid=19e679057b9bcb475f2b0fdccb53c134`)
      
        const json  = await data.json();
        
