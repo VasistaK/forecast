@@ -63,7 +63,7 @@ const Input = ({info,setInfo}) => {
     <div>
     <div className="text-center ">
     <input
-    className='outline-none mt-4 border border-gray-400   relative pr-12  bg-transparent' 
+    className='outline-none mt-4 border border-gray-400   relative pr-5  bg-transparent' 
     onKeyDown = {(e)=>{ inputHandler(e)}}
     onFocus={()=>{setShowSuggestions(true)}}
     onBlur={()=>{
