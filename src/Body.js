@@ -69,7 +69,7 @@ const temparray = ftoc.call(objtemp);
 
 return (isOnline)? (
   <>
-<div className="max-[640px]:w-[100vw] max-md:h-fit h-[100vh] bg-cover text-white font-mono font-bold text-xl max-sm:bg-cover bg-[url('https://t4.ftcdn.net/jpg/02/78/52/07/360_F_278520748_G9sRQdSValj67Hihmt4r3ji6SLRT3ViA.jpg')]">
+<div className="max-[640px]:w-[100vw] max-[920px]:  max-md:h-fit h-[100vh] bg-cover text-white font-mono font-bold text-xl max-sm:bg-cover bg-[url('https://t4.ftcdn.net/jpg/02/78/52/07/360_F_278520748_G9sRQdSValj67Hihmt4r3ji6SLRT3ViA.jpg')]">
 
 <div  className="">
      
