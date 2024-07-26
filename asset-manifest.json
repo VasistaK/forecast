@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/forecast/static/css/main.1233f64d.css",
-    "main.js": "/forecast/static/js/main.ff49b09e.js",
+    "main.css": "/forecast/static/css/main.e42b8888.css",
+    "main.js": "/forecast/static/js/main.97689618.js",
     "index.html": "/forecast/index.html",
-    "main.1233f64d.css.map": "/forecast/static/css/main.1233f64d.css.map",
-    "main.ff49b09e.js.map": "/forecast/static/js/main.ff49b09e.js.map"
+    "main.e42b8888.css.map": "/forecast/static/css/main.e42b8888.css.map",
+    "main.97689618.js.map": "/forecast/static/js/main.97689618.js.map"
   },
   "entrypoints": [
-    "static/css/main.1233f64d.css",
-    "static/js/main.ff49b09e.js"
+    "static/css/main.e42b8888.css",
+    "static/js/main.97689618.js"
   ]
 }
