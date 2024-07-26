@@ -12,7 +12,7 @@ const Input = ({info,setInfo}) => {
    
     const [search,setSearch] = useState("");
 
-    const suggestionurl  = 'https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
+    const suggestionurl  = 'http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
 
     const getSuggestions = async ()=>{
 
@@ -63,7 +63,7 @@ const Input = ({info,setInfo}) => {
     <div>
     <div className="text-center ">
     <input
-    className='mt-4 border border-gray-400   relative pr-12  bg-transparent' 
+    className='outline-none mt-4 border border-gray-400   relative pr-12  bg-transparent' 
     onKeyDown = {(e)=>{ inputHandler(e)}}
     onFocus={()=>{setShowSuggestions(true)}}
     onBlur={()=>{
@@ -78,11 +78,11 @@ const Input = ({info,setInfo}) => {
     />
     <button  
     onClick={()=>{handleClick()}} 
-    className="align-middle  absolute right-6 top-[17px] border-l-2   mb-[2px] " 
+           className='border border-gray-400'
     >
     🔍
     </button>
-      {  showSuggestions && 
+      {  showSuggestions &&
       <div className='flex justify-center'>
               <div className='max-sm:h-[100px] text-start absolute z-10 bg-white text-black  w-[285px] top-12 border border-gray-300 rounded-lg'>
         <ul>
