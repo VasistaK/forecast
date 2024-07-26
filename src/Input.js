@@ -12,7 +12,7 @@ const Input = ({info,setInfo}) => {
    
     const [search,setSearch] = useState("");
 
-    const suggestionurl  = 'http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
+    const suggestionurl  = 'https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
 
     const getSuggestions = async ()=>{
 
