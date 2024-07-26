@@ -26,7 +26,7 @@ const Input = ({info,setInfo}) => {
 
     useEffect(()=>{
      
-   const timer = setTimeout(getSuggestions,300);
+   const timer = setTimeout(getSuggestions,100);
 
    return()=>{
     clearTimeout(timer)
@@ -61,8 +61,9 @@ const Input = ({info,setInfo}) => {
   return (
 
     <div>
-    <div className="text-center text-white">
-    <input 
+    <div className="text-center ">
+    <input
+    className='mt-4 border border-gray-400   relative pr-12  bg-transparent' 
     onKeyDown = {(e)=>{ inputHandler(e)}}
     onFocus={()=>{setShowSuggestions(true)}}
     onBlur={()=>{
@@ -71,19 +72,19 @@ const Input = ({info,setInfo}) => {
         clearTimeout(timer)
        }
     }}
-    className='relative capitalize max-[400px]:flex-1 bg-transparent border-2 border-white m-2 p-1 '
     onChange={(e)=>{setSearch(e.target.value)}} 
     value={search}
-    placeholder="EnterLocation"/>
+    placeholder="EnterLocation"
+    />
     <button  
     onClick={()=>{handleClick()}} 
-    className="align-middle relative ml-[-88px] border-l-2 h-[38px] pl-1 pr-3 mb-[2px] " 
+    className="align-middle  absolute right-6 top-[17px] border-l-2   mb-[2px] " 
     >
-    Search
+    🔍
     </button>
       {  showSuggestions && 
       <div className='flex justify-center'>
-              <div className='text-start absolute z-10 bg-white text-black  w-[247px] top-12 border border-gray-300 rounded-lg'>
+              <div className='max-sm:h-[100px] text-start absolute z-10 bg-white text-black  w-[285px] top-12 border border-gray-300 rounded-lg'>
         <ul>
             {
      suggestions.map((s,id)=>{return <li key={id} onClick={()=>setSearch(s)}>{s}</li>})
