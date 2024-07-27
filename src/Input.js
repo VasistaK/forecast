@@ -50,7 +50,7 @@ useEffect(()=>{city()},[])
 
     if(search !== ""){
        
-       const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metrics&appid=19e679057b9bcb475f2b0fdccb53c134`)
+       const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=Imperial&appid=19e679057b9bcb475f2b0fdccb53c134`)
      
        const json  = await data.json();
        
