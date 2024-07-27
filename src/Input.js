@@ -32,7 +32,7 @@ const Input = ({info,setInfo}) => {
   
 const filterCities = (x)=>{
   
-  const output = suggestions.filter((y)=>{return y.toLowerCase().includes(x)});
+  const output = suggestions.filter((y)=>{return y.toLowerCase().includes(x).toLowerCase()});
   
   setDisplaySuggestions(output.slice(0,8));
 
