@@ -1,8 +1,9 @@
+import { logDOM } from '@testing-library/react';
+import { click } from '@testing-library/user-event/dist/click';
+
 import React, { useContext } from 'react'
 
 import {useState,useEffect}  from "react";
-
-
 
 const Input = ({info,setInfo}) => {
     
@@ -10,74 +11,83 @@ const Input = ({info,setInfo}) => {
 
     const [showSuggestions,setShowSuggestions] = useState(false);
    
+    const [displaySugeestions,setDisplaySuggestions] = useState([]);
+
     const [search,setSearch] = useState("");
 
-    const suggestionurl  = 'https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
 
-    const getSuggestions = async ()=>{
+    const city  = async()=>{
 
-    const data = await fetch(suggestionurl+search);
-     
-    const json = await data.json();
+      const data = await fetch('https://countriesnow.space/api/v0.1/countries');
 
-    setSuggestions(json[1]);
-    
+      const json = await data.json();
+
+      setSuggestions(json.data.map(x=>x.country));
+
+        
     }
 
-    useEffect(()=>{
-     
-   const timer = setTimeout(getSuggestions,100);
-
-   return()=>{
-    clearTimeout(timer)
-   }
-    
-    },[search])
 
 
+  
+const filterCities = (x)=>{
+  
+  const output = suggestions.filter((y)=>{return y.toLowerCase().includes(x)});
+  
+  setDisplaySuggestions(output.slice(0,8));
 
-    async function handleClick(){
+  // console.log(output);
 
-         if(search !== ""){
+}
+
+
+useEffect(()=>{city()},[])
    
+
+   async function handleClick(search){
+   
+    setSearch(search)
+
+    if(search !== ""){
+       
+      
+
        const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=Imperial&appid=19e679057b9bcb475f2b0fdccb53c134`)
      
        const json  = await data.json();
        
        setInfo(json);
-   }
+
+    }
 }
 
-
-
-     
                       //enter button function
      function inputHandler(e){
       if(e.key === "Enter"){
         return handleClick();
     }
      }
-    
-  return (
 
+
+  return (
     <div>
     <div className="text-center ">
     <input
-    className='outline-none mt-4 border border-gray-400   relative pr-5  bg-transparent' 
+    className='capitalize outline-none mt-4 border border-gray-400   relative pr-5  bg-transparent' 
     onKeyDown = {(e)=>{ inputHandler(e)}}
-    onFocus={()=>{setShowSuggestions(true)}}
-    onBlur={()=>{
+    onFocus = {()=>{setShowSuggestions(true)}}
+    onBlur = {()=>{
       const timer = setTimeout(()=>setShowSuggestions(false),300)
        return ()=>{
-        clearTimeout(timer)
+        clearTimeout(timer);
        }
     }}
-    onChange={(e)=>{setSearch(e.target.value)}} 
+    onChange={(e)=>{return [setSearch(e.target.value),filterCities(e.target.value)]}} 
     value={search}
     placeholder="EnterLocation"
     />
     <button  
-    onClick={()=>{handleClick()}} 
+    onClick={()=>{handleClick(search)}} 
            className='border border-gray-400'
     >
     🔍
@@ -87,7 +97,7 @@ const Input = ({info,setInfo}) => {
               <div className='max-sm:h-[100px] text-start absolute z-10 bg-white text-black  w-[285px] top-12 border border-gray-300 rounded-lg'>
         <ul>
             {
-     suggestions.map((s,id)=>{return <li key={id} onClick={()=>setSearch(s)}>{s}</li>})
+          displaySugeestions.map((x,i)=><li key={i} onClick={()=>handleClick(x)}>{x}</li>)
             }
         </ul>
        </div>
