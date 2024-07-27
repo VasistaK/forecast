@@ -73,7 +73,7 @@ useEffect(()=>{city()},[])
     <input
     className='capitalize outline-none mt-4 border border-gray-400   relative pr-5  bg-transparent' 
     onKeyDown = {(e)=>{ inputHandler(e)}}
-    onFocus = {()=>{setShowSuggestions(true)}}
+    onFocus = {()=>{setShowSuggestions(true);city()}}
     onBlur = {()=>{
       const timer = setTimeout(()=>setShowSuggestions(false),300)
        return ()=>{
