@@ -50,9 +50,7 @@ useEffect(()=>{city()},[])
 
     if(search !== ""){
        
-      
-
-       const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=Imperial&appid=19e679057b9bcb475f2b0fdccb53c134`)
+       const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metrics&appid=19e679057b9bcb475f2b0fdccb53c134`)
      
        const json  = await data.json();
        
@@ -94,7 +92,7 @@ useEffect(()=>{city()},[])
     </button>
       {  showSuggestions &&
       <div className='flex justify-center'>
-              <div className='max-sm:h-[100px] text-start absolute z-10 bg-white text-black  w-[285px] top-12 border border-gray-300 rounded-lg'>
+              <div className='max-sm:h-fit text-start absolute z-10 bg-white text-black  w-[285px] top-12 border border-gray-300 rounded-lg'>
         <ul>
             {
           displaySugeestions.map((x,i)=><li key={i} onClick={()=>handleClick(x)}>{x}</li>)
