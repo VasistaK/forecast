@@ -31,8 +31,8 @@ const Input = ({info,setInfo}) => {
 
   
 const filterCities = (x)=>{
-  
-  const output = suggestions.filter((y)=>{return y.toLowerCase().includes(x).toLowerCase()});
+   
+  const output = suggestions.filter((y)=>{return y.toLowerCase().includes(x.toLowerCase())});
   
   setDisplaySuggestions(output.slice(0,8));
 
@@ -62,7 +62,7 @@ useEffect(()=>{city()},[])
                       //enter button function
      function inputHandler(e){
       if(e.key === "Enter"){
-        return handleClick();
+        return handleClick(search);
     }
      }
 
