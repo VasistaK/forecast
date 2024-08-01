@@ -40,7 +40,7 @@ const Input = ({info,setInfo}) => {
   
 const filterCities = (search)=>{
 
-  const output = suggestions?.filter((y)=>{ return y?.includes(search.toLowerCase())});
+  const output = suggestions?.filter((y)=>{ return y.toLowerCase()?.includes(search.toLowerCase())});
 console.log(output);
  
     setDisplaySuggestions(output);
