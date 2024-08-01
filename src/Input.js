@@ -1,4 +1,5 @@
-import { logDOM } from '@testing-library/react';
+
+import { logDOM, render } from '@testing-library/react';
 import { click } from '@testing-library/user-event/dist/click';
 
 import React, { useContext } from 'react'
@@ -8,6 +9,7 @@ import {useState,useEffect}  from "react";
 const Input = ({info,setInfo}) => {
     
     const [suggestions,setSuggestions] = useState([]);
+    console.log(suggestions);
 
     const [showSuggestions,setShowSuggestions] = useState(false);
    
@@ -18,30 +20,31 @@ const Input = ({info,setInfo}) => {
 
     const city  = async()=>{
 
-      const data = await fetch('https://countriesnow.space/api/v0.1/countries');
+      
+      const data = await fetch(`https://place-autocomplete1.p.rapidapi.com/autocomplete/json?input=${search}&radius=5`, {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-key': '0256c48be7mshacddd2d683c47fcp1294a2jsn5ce405c0b953',
+          'x-rapidapi-host': 'place-autocomplete1.p.rapidapi.com'
+      }
+      }
+      )
 
       const json = await data.json();
-
-      setSuggestions(json.data.map(x=>x.country));
-
-        
-    }
-
-
-
+    
+       setSuggestions(json)}
   
 const filterCities = (x)=>{
-   
-  const output = suggestions.filter((y)=>{return y.toLowerCase().includes(x.toLowerCase())});
+
+  const output = suggestions.predictions.map(y=>y.description)?.filter((y)=>{ return y.toLowerCase()?.includes(x.toLowerCase())});
+console.log(output);
+ 
+    setDisplaySuggestions(output);
   
-  setDisplaySuggestions(output.slice(0,8));
-
-  // console.log(output);
-
 }
 
 
-useEffect(()=>{city()},[])
+useEffect(()=>{city()},[search])
    
 
    async function handleClick(search){
@@ -109,11 +112,4 @@ useEffect(()=>{city()},[])
   )
 }
 
-export default Input
-
-
-
-
-
-
-
+export default Input;
