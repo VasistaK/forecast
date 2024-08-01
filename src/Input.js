@@ -9,7 +9,7 @@ import {useState,useEffect}  from "react";
 const Input = ({info,setInfo}) => {
     
     const [suggestions,setSuggestions] = useState([]);
-    console.log(suggestions);
+    // console.log(suggestions);
 
     const [showSuggestions,setShowSuggestions] = useState(false);
    
@@ -21,25 +21,31 @@ const Input = ({info,setInfo}) => {
     const city  = async()=>{
 
       
-      const data = await fetch(`https://place-autocomplete1.p.rapidapi.com/autocomplete/json?input=${search}&radius=5`, {
-        method: 'GET',
-        headers: {
-          'x-rapidapi-key': '0256c48be7mshacddd2d683c47fcp1294a2jsn5ce405c0b953',
-          'x-rapidapi-host': 'place-autocomplete1.p.rapidapi.com'
-      }
-      }
+      const data =  await fetch(`https://place-autocomplete1.p.rapidapi.com/autocomplete/json?input=${search}&radius=`,
+        {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-key': 'eaea22f191mshef282674e997d4dp100126jsnc78f9591f688',
+            'x-rapidapi-host': 'place-autocomplete1.p.rapidapi.com'
+          }
+        }
       )
 
       const json = await data.json();
     
-       setSuggestions(json)}
-  
-const filterCities = (x)=>{
+       setSuggestions(json.predictions.map(x=>x.description));
 
-  const output = suggestions.predictions.map(y=>y.description)?.filter((y)=>{ return y.toLowerCase()?.includes(x.toLowerCase())});
+       console.log(json);
+      }
+  
+const filterCities = (search)=>{
+
+  const output = suggestions?.filter((y)=>{ return y?.includes(search.toLowerCase())});
 console.log(output);
  
     setDisplaySuggestions(output);
+
+
   
 }
 
@@ -57,7 +63,7 @@ useEffect(()=>{city()},[search])
      
        const json  = await data.json();
        
-       setInfo(json);
+       setInfo(json); 
 
     }
 }
